@@ -1,0 +1,37 @@
+thead th {
+  padding: 0.5rem !important;
+  border: none !important;
+  background-color: $table-header;
+  height: 19px;
+  font-family: $Avenir;
+  font-size: 14px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: 0.024em;
+  text-align: left;
+  color: $text-table-header;
+}
+
+table td {
+  border: none !important;
+  height: 19px;
+  font-family: $Avenir;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: $brownish-grey;  
+}
+
+.table-strip tbody tr:nth-of-type(odd) {
+  background-color: $white;
+}
+
+.table-strip tbody tr:nth-of-type(even) {
+  background-color: $table-striped;
+}

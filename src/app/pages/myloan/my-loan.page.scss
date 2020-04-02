@@ -1,0 +1,38 @@
+@import "../../../variables.scss";
+
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.margin-align {
+  width: 86%;
+}
+
+.welcome-header {
+  font-family: $Avenir;
+  font-size: 24px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: $gray44;
+  margin-top: 2.7%;
+}
+
+.welcome-content {
+  font-family: $Avenir-Roman;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: $gray44;
+  margin-top: 0.9%;
+  margin-bottom: 2.4%;
+}
+
+.search-my-borrower-name {
+  height: 32px !important;
+}

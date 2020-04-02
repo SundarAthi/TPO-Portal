@@ -1,0 +1,128 @@
+<div class="margin-align m-auto">
+    <div class="welcome-header">
+        Welcome Andrea
+    </div>
+    <div class="welcome-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo vitae sem nec
+        vestibulum. Cras nec maximus felis. Nullam a lacus dapibus, varius sem ac, cursus enim.
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" (click)="showTab(0)">
+                    <a class="nav-link inactive-tab" [ngClass]="{'active-tab': isShowTab == 0}">
+                        Pipeline
+                    </a>
+                </li>
+                <li class="nav-item" (click)="showTab(1)">
+                    <a class="nav-link inactive-tab" [ngClass]="{'active-tab': isShowTab == 1}">
+                        Signed Loans
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12" *ngIf="isShowTab == 0">
+            <div class="row">
+                <div class="col-4">
+                    <input class="form-control search-my-borrower-name" name="myLoans"
+                        placeholder="Search by Borrower Name" type="text" [(ngModel)]="serchTexteSignFalse">
+                </div>
+                <div class="col-1">
+                    <button class="btn-gray btn-outline-gray btn-searchml-3" type="button"
+                        (click)="searchLoans()">Search</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table table-strip table-hover pointer">
+                        <thead>
+                            <tr>
+                                <th>Loan Number</th>
+                                <th>Borrower Name</th>
+                                <th>Address</th>
+                                <th>Loan Amount</th>
+                                <th>Started</th>
+                                <th>Status</th>
+                                <th>Lock Expiry</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tpoLoanseSignedFalse | paginate: config; let i = index"
+                                (click)="goToLoanDetail(item)">
+                                <td>{{ item.loanNo }}</td>
+                                <ng-container *ngFor=" let subitem of item.signers">
+                                    <td *ngIf="(subitem.type == 'Borrower')">{{ subitem.name }}</td>
+                                </ng-container>
+                                <td>{{ item.address || '-' }}</td>
+                                <td>{{ item.loanAmount }}</td>
+                                <td>{{ item.started | date: 'MM/dd/yyyy'}}</td>
+                                <td>{{ item.status || '-'  }}</td>
+                                <td>
+                                    {{ item.lockExpiry || '-'}}
+                                </td>
+                                <td>eSign</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class=" float-right mr-2" *ngIf="tpoLoanseSignedFalse">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel="">
+                </pagination-controls>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="isShowTab == 1">
+            <div class="row">
+                <div class="col-4">
+                    <input class="form-control search-my-borrower-name" name="myLoans"
+                        placeholder="Search by Borrower Name" type="text" [(ngModel)]="serchTexteSignTrue">
+                </div>
+                <div class="col-1">
+                    <button class="btn-gray btn-outline-gray btn-searchml-3" type="button"
+                        (click)="searchLoans()">Search</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table table-strip table-hover pointer">
+                        <thead>
+                            <tr>
+                                <th>Loan Number</th>
+                                <th>Borrower Name</th>
+                                <th>Address</th>
+                                <th>Loan Amount</th>
+                                <th>Started</th>
+                                <th>Status</th>
+                                <th>Lock Expiry</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tpoLoanseSignedTrue | paginate: config; let i = index"
+                                (click)="goToLoanDetail(item)">
+                                <td>{{ item.loanNo }}</td>
+                                <ng-container *ngFor=" let subitem of item.signers">
+                                    <td *ngIf="(subitem.type == 'Borrower')">{{ subitem.name }}</td>
+                                </ng-container>
+                                <td>{{ item.address }}</td>
+                                <td>{{ item.loanAmount }}</td>
+                                <td>{{ item.started | date: 'MM/dd/yyyy'}}</td>
+                                <td>{{ item.status }}</td>
+                                <td>
+                                    {{ item.lockExpiry || '-'}}
+                                </td>
+                                <td>eSign</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class=" float-right mr-2" *ngIf="tpoLoanseSignedTrue">
+                <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel="">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>

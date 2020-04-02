@@ -1,0 +1,73 @@
+.navbar {
+  height: 56px !important;
+  background-color: $light-gray;
+
+  .nav-item {
+    padding: 5px;
+  }
+
+  .tpo-portal {
+    font-family: $Avenir !important;
+    font-size: 24px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: $gray2;
+  }
+
+  .nav-pills-user {
+    font-family: $Avenir;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    .nav-link {
+      color: $gray2 !important;
+      padding: 0.5rem 2rem !important;
+    }
+
+    //summary
+    @media only screen and (min-width: 2560px) {
+      .loan-summary-align {
+        position: relative !important;
+        bottom: 80px !important;
+      }
+    }
+
+    @media only screen and (min-width: 1440px) and (max-width: 2559px) {
+      .loan-summary-align {
+        position: relative !important;
+        bottom: 23px !important;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1050px) {
+      .loan-summary-align {
+        position: relative !important;
+        bottom: 3px !important;
+      }
+    }
+
+    .welcome-msg {
+      font-family: $Avenir !important;
+      font-size: 16px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      text-align: left;
+      text-decoration: none;
+    }
+  }
+}
+
+.container-fluid {
+  margin-top: 5%;
+}

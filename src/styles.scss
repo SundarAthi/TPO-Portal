@@ -1,1 +1,181 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "styles/navbar";
+@import "styles/table";
+@import "styles/pagination";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+//font
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/Avenir/Avenir.ttc");
+}
+
+@font-face {
+  font-family: "Avenir-Roman-12";
+  src: url("./assets/fonts/Avenir/Avenir-Roman-12.ttf");
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("./assets/fonts/Helvetica-Neue/HelveticaNeue.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Roman";
+  src: url("./assets/fonts/Avenir/Avenir Roman.otf");
+}
+
+//tab
+.active-tab {
+  font-family: $Avenir;
+  font-size: 16px;
+  font-weight: 900 !important;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: $matterhorn !important;
+  border-bottom: 2px solid $matterhorn !important;
+  padding-top: 12px;
+}
+
+.inactive-tab {
+  font-family: $Avenir;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: $matterhorn !important;
+  padding-top: 12px;
+}
+
+.nav-tabs .nav-link:hover {
+  border-left: none !important;
+  border-top: none !important;
+  border-right: none !important;
+}
+
+.nav-tabs .nav-link {
+  border-left: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  cursor: pointer;
+}
+
+.btn-gray {
+  font-family: $Avenir-Roman;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 15px 7px 15px;
+  color: $grey;
+  border: solid 1px $gray80;
+}
+
+.btn-outline-gray {
+  background-color: $white;
+  color: $grey;
+  border: 1px solid $gray80;
+}
+
+.btn-secondary {
+  width: 144px;
+  height: 40px;
+  font-family: $NunitoSans;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  background-color: $brownish-grey !important;
+  border-color: $brownish-grey !important;
+  border-radius: 6px !important;
+}
+
+.form-control {
+  border-radius: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+
+  .form-control:focus {
+    border: 1px solid #ced4da !important;
+  }
+}
+
+input::-webkit-input-placeholder {
+  height: 19px;
+  font-family: $Avenir-Roman;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: 0.024em;
+  text-align: left;
+  color: $trollygrey !important;
+}
+
+// pagination
+.page-link {
+  color: $pagination-text-color !important;
+}
+
+.page-item.active .page-link {
+  background-color: $pagination-color !important;
+  border-color: $pagination-color !important;
+}
+
+.page-link:hover {
+  color: $pagination-text-color !important;
+  background-color: $white !important;
+  border-color: $pagination-color !important;
+}
+
+.page-link:focus {
+  box-shadow: none !important;
+}
+
+.text-justyfy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.modal-header {
+  padding: 0.2 rem 0.2 rem !important;
+}
+.modal-body {
+  height: 455px !important;
+}
+
+.modal-footer {
+  padding: 0.1 rem 0.1 rem !important;
+}

@@ -1,0 +1,57 @@
+<div class="margin-align m-auto">
+    <div class="text-justyfy">
+        <div class="loan-detail ml-5">
+            <div class="form-check-inline">
+                <div class="pointer" (click)="goToMyLoan()">
+                    <img src="assets/image/arrow_back-24px.png" class="arrow_back">
+                </div>
+                <div class="loan-number ml-2">Pipeline / {{ loanNo }}</div>
+            </div>
+            <div class="eSign-Documents">
+                eSign Documents
+            </div>
+            <div class="before-eSign-content">
+                Please electronically sign the 1003 document below. Click the eSign button to Start.
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table table-strip table-hover">
+                        <thead>
+                            <tr>
+                                <th>{{ borrowerName }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let item of loanDocuments">
+                                <tr>
+                                    <td>
+                                        <img src="assets/image/check_circle-24px.png" class="check-circle">
+                                        <span class="documents">{{item.title}}</span>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="float-right">
+                <button type="button" class="btn btn-secondary" (click)="openModal()" [disabled]="isSigned">
+                    eSign
+                </button>
+            </div>
+        </div>
+        <div class="loan-summary-align">
+            <div class="mt-2">
+                <div class="loan-summary">
+                    <span class="loan-summary-btn-text">Loan Summary</span>
+                </div>
+                <ng-container *ngFor="let label of LoanInfoLabel">
+                    <div class="pt-3 list-item-data-align">
+                        <div class="list-item-label">{{ label. label}}</div>
+                        <div class="list-item-data-value">{{ label.key }}</div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

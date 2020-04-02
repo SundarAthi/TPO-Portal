@@ -1,0 +1,72 @@
+.ngx-pagination {
+  border: solid 1px #dddddd !important;
+  background-color: $white !important;
+  margin: 0px !important;
+  padding: 0px !important;
+
+  .disabled {
+    padding: 0.18rem 1rem !important;
+  }
+}
+
+.ngx-pagination li {
+  width: 40px !important;
+  height: 32px !important;
+  font-family: $Avenir;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  //   line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: $pagination-text-color;
+  border-right: solid 1px #dddddd;
+  background-color: $white !important;
+  margin-right: 0px !important;
+  //padding-top: 3px !important;
+}
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+}
+
+.ngx-pagination li.current {
+  background-color: $pagination-color !important;
+  font-family: $Avenir;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  //   line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: $white;
+  //padding: 0px !important;
+}
+
+.ngx-pagination li:nth-last-child(1) {
+  border-right: none !important;
+}
+
+.ngx-pagination li:nth-first-child(1) {
+  border-left: solid 1px #dddddd !important;
+}
+
+.ngx-pagination li a,
+a:hover {
+  padding-bottom: 8px !important;
+}
+
+.ngx-pagination li span:nth-child(2) {
+  top: 4px !important;
+  position: relative !important;
+}
+
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after,
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
+  top: 2px !important;
+  position: relative !important;
+}
