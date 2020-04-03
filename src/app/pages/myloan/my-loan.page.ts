@@ -50,7 +50,7 @@ export class MyLoanPage implements OnInit {
                     }
                 });
                 if (this.isShowTab == 0) {
-                    this.tpoLoanseSignedFalseFilters = this.tpoLoanseSignedFalse = res.filter(resultData => resultData && resultData.loanNo);
+                    this.tpoLoanseSignedFalseFilters = this.tpoLoanseSignedFalse = res.filter(resultData => resultData && resultData.loanNo && resultData.signers.find(obj => obj.type.toLowerCase() == "originator")    );
                 }
                 else {
                     this.tpoLoanseSignedTrueFilters = this.tpoLoanseSignedTrue = res.filter(resultData => resultData && resultData.loanNo);
